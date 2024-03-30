@@ -41,3 +41,6 @@ console.log(cars[cars.length - 1])
 console.log(cars.slice(-1))
 
 
+// some new code - @josh
+console.log("this is a newly added line of code")
+
