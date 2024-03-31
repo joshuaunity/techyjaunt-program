@@ -13,8 +13,10 @@ console.log(getSalary(micheal));
 // CREATE A NEW FUNCTION THAT UPDATE AN EMPLOYEE'S SALARY.
 
 // this function calculate the new salary of an employee (increase salary by 25%).
+
 const newSalary = (employee) => {
     let increSalary = employee.salary + 0.25*employee.salary;
+    // increSalary depend on object passed into getSalary().
     return `The new salary of ${employee.name} is ${increSalary} per day.`;
 }
 console.log(newSalary(micheal))
