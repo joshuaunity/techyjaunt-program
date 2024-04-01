@@ -12,11 +12,15 @@ console.log(getSalary(micheal));
 
 // CREATE A NEW FUNCTION THAT UPDATE AN EMPLOYEE'S SALARY.
 
-// this function calculate the new salary of an employee (increase salary by 25%).
+/* this function update an employee's new salary.
+It takes an employee's name and his new salary as its arg and then modify the employee's salary. */
 
-const newSalary = (employee) => {
-    let increSalary = employee.salary + 0.25*employee.salary;
-    // increSalary depend on object passed into getSalary().
-    return `The new salary of ${employee.name} is ${increSalary} per day.`;
-}
-console.log(newSalary(micheal))
+const updateSalary = (employee, newSalary) => {
+    return employee.salary = newSalary, 
+    `${employee.name}'s new salary is ${newSalary}`;
+};
+
+console.log(updateSalary(micheal, 6000));
+
+// the below code is used to check whether micheal's salary has been successfully reassigned.
+//console.log(micheal.salary);
