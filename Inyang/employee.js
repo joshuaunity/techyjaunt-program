@@ -16,3 +16,5 @@ const updateSalary = (employee, newSalary) => {
     employee.salary = newSalary;
     return `Salary updated successfully for ${employee.name}. New salary: ${employee.salary}`;
 }
+
+console.log(updateSalary(employee, 60000));
