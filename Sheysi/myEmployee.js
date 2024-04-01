@@ -13,7 +13,9 @@ console.log(getSalary(sasha));
 
 // Update Salary
 const updateSalary = (employee, newSalary) => {
-    return `After consideration, ${employee.name}'s new salary is ${newSalary} per month`;
+    employee.salary = newSalary
+    return `After consideration, ${employee.name}'s new salary is ${employee.salary} per month`;
 };
 
 console.log(updateSalary(sasha, 3500));
+// console.log(sasha.salary);
