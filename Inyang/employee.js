@@ -12,7 +12,7 @@ console.log(getSalary(michael));
 
 // Function that updates an Employee's salary
 
-function updateSalary(employee, newSalary) {
+const updateSalary = (employee, newSalary) => {
     employee.salary = newSalary;
     return `Salary updated successfully for ${employee.name}. New salary: ${employee.salary}`;
 }
