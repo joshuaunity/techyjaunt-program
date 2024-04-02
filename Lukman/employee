@@ -1,0 +1,21 @@
+const createEmployee = (name, role, salary) => {
+    return {name, role, salary};
+};
+
+let Lukman = createEmployee("Lukman", "Backend Dev", 5000);
+
+const getSalary = (employee) => {
+    return `The salary of ${employee.name} is ${employee.salary} per day`;
+};
+
+console.log(getSalary(Lukman));
+
+//update salary functioon
+let newSalary = (7000);
+
+const updateSalary = (employee,  newSalary)  => {
+    employee.salary = newSalary;
+    return `The new salary of ${employee.name} is ${employee.salary} per day`;
+};
+
+console.log(updateSalary(Lukman, newSalary));
