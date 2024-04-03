@@ -17,4 +17,4 @@ const updateSalary = (employee, salaryUpgrade) => {
     return `Congratulation ${employee.name}, your updated salary is ${salaryUpgrade} per day`;
 }
 
-console.log(updateSalary(staff, 4000));
+console.log(updateSalary(staff, 5000));
