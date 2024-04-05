@@ -87,7 +87,7 @@
 
 
 // update car details
-const updateCarDetails = ({make, year }) => {
+const updateCarDetails = ({make, year}) => {
     console.log(year, make)
     // this.make = make;
     // this.year = year;
