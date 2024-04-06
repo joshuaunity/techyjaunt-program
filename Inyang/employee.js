@@ -1,4 +1,4 @@
-const createEmployee = (name, salary, role) => {
+ const createEmployee = (name, salary, role) => {
     return { name, role, salary };
 };
 
