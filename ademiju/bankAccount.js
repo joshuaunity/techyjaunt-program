@@ -1,42 +1,59 @@
-class BankAccount{
-//     accountNumber | number | private attribute
-// accountHolder | string | private attribute
-// balance | number | private attribute
-// transactions | array | private attribute
-// deposit function
-// withdraw function
-// getTransactions function
-constructor(accountNumber,accountHolder,balance,transactions){
-    this.accountNumber = accountNumber;
-    this.accountHolder = accountHolder;
-    this.balance = 0;
-    this.transactions = [];
+import Transaction from "./transaction";
 
-}
+class BankAccount{
+
+    constructor(accountNumber,accountHolder,balance,transactions){
+        if(typeof accountNumber !==  "number"){
+            throw new Error("Account number entered not a Number");
+        }
+        this.accountNumber = accountNumber;
+        if(typeof accountHolder !==  "string"){
+            throw new Error("Account Holder entered not a String");
+        }
+        this.accountHolder = accountHolder;
+        this.balance = 0;
+        this.transactions = [];
+
+    }
 
  
-    get accountNumber(){
+    get getAccountNumber(){
         return this.accountNumber
     }
-    set accountNumber(accountNumber){
+    set setAccountNumber(accountNumber){
         if(typeof accountNumber !==  "number"){
             throw new Error("Account number entered not a number");
         }
-        this.accountNumber = accountNumber;
+        this.accountNumber = accountNumber
     }
     
-    get accountHolder(){
+    get getAccountHolder(){
         return this.accountHolder
     }
-    set accountHolder(accountHolder){
-        if(typeof accountNumber !==  "string"){
+    set setAcountHolder(accountHolder){
+        if(typeof accountHolder!==  "string"){
             throw new Error("Account Holder entered not a String");
         }
         this.accountHolder = accountHolder;
     }
     
-    get balance(){
+    get getBalance(){
             return this.balance
+    }
+    set setTransactions(transactions){
+        if(!Array.isArray(transactions)){
+            throw new Error("transaction passed is not an array")
+        }
+        transactions.forEach(transaction => {
+            if(!transaction.hasPoperty("type") && !transaction.hasPoperty("amount") && !transaction.hasPoperty("timestamp")){
+                throw new Error("Array passed in not of transaction type")
+            }        
+        });
+        transactions.forEach(transaction => {
+            this.transactions.push(transaction);
+        });
+        
+        console.log(`Added ${transactions.length()} transactions`);
     }
 
     getTransactions () {
@@ -48,6 +65,8 @@ constructor(accountNumber,accountHolder,balance,transactions){
         if(typeof amount === "number" && amount > 0){
             this.balance += amount;
             console.log(`Successfully deposited ${amount}...New account balance is ${this.balance}`)
+            const transaction = new Transaction("Savings",amount);
+            this.transactions.push(transaction);           
 
         }
         
@@ -59,3 +78,17 @@ constructor(accountNumber,accountHolder,balance,transactions){
         }
     }
 }
+const bankAccount = new BankAccount(1234567,"Ademiju Taiwo");
+console.log(bankAccount);
+bankAccount.setAccountNumber = 12322;
+bankAccount.setAcountHolder= "John Doe";
+bankAccount.deposit(20000);
+bankAccount.a
+console.log(bankAccount.getBalance)
+console.log(bankAccount);
+console.log
+
+
+
+// const bankAccount2 = new BankAccount("1234567","John Doe");
+// console.log(bankAccount2);
