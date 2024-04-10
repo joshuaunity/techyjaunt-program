@@ -1,56 +1,78 @@
-const sayHi = (name) => {
-    console.log("hello there, " + name);
+
+// // for loops
+// for (let a = 1; a <= 8; a++) {
+//     // console.log(a);
+// }
+
+// nums = [1, 3, 78, 21, 33, 61, 90]
+// // for (let a = 0; a <= 7; a++) {
+// //     console.log(nums[a]); // nums[0]
+// // }
+
+// // for (let a = 0; a <= (nums.length - 1); a++) {
+// //     console.log(nums[a]);
+// // }
+
+// let p = 0;
+// // while (p <= 6) {
+// //     console.log(p);
+// //     p++;
+// // }
+
+// // while (p <= (nums.length - 1)) {
+// //     console.log(nums[p]);
+// //     p++;
+// // }
+
+// // let k = 0;
+// // do {
+// //     console.log(nums[k]);
+// //     k++;
+// // } while (k <= (nums.length - 1));
+
+
+// phones = ['tecno', 'pixel', 'itel', 'oppo', 'samsung'];
+// // for (let phone of phones) {
+// //     console.log(phone);
+// // }
+
+// // for (let phone in phones) {
+// //     console.log(phones[phone]);
+// // }
+
+// phones.forEach(item => {
+//     console.log(item);
+// });
+
+const updateCarDetails = ({ make, year }) => {
+    console.log(make, year);
 }
 
-// sayHi("helin")
-
-const whatCar = ({brand = "Honda", color}) => {
-    console.log("This is the " + brand + " brand with a color of " + color); 
+const company = {
+    name: "asan vechiles"
 }
 
-// whatCar("lexus", "blue")
-// whatCar({ brand: "lexus", color: "blue" })
+const car = {
+    company: company,
+    make: 'Toyota',
+    model: 'corolla',
+    year: 2011,
+    update: updateCarDetails
+};
 
-const sumUpValues = ({x, y, z}) => {
-    let c = x + y + z;
-    return c;
-}
+// car.update({ make: "Xiamoi", year: 2024})
 
-console.log(sumUpValues({ x: 2, y: 3, z: 1 }))
+console.log(car.company.name);
+console.log(car.make);
+console.log(car["year"]);
 
-const fullName = ({ firstname, lastname }) => {
-    return firstname + " " + lastname;
-}
+// for (let item in car) {
+//     console.log(car[item]);
+// }
 
-console.log(fullName({ firstname: "fatima", lastname: "lanre" }));
+// const moveCar = () => {
+//     console.log(`The ${car.make} has moved from the original position`);
+// }
 
-const scores = [20, 30, 68, 12]
-const englishscores = [50, 70, 10]
-const scores2 = [...scores, ...englishscores]
-
-const sumUpScores = (scores) => {
-    let sum = 0
-    for (let score of scores) {
-        // sum = sum + score // 1
-        sum += score      // 2
-    }
-
-    return sum
-}
-
-console.log(sumUpScores(scores))
-
-const sumUpScoresV2 = (...scores) => {
-    return scores.reduce((total, score) => total + score, 0);
-}
-
-console.log(sumUpScoresV2(...scores2))
-
-
-const totalScore = sumUpScores(scores);
-console.log("sumFunc result: ", totalScore)
-
-
-const sayHii = (name) => {
-    console.log("hello there, " + name);
-}
+// car.move = moveCar;
+// car.move();
