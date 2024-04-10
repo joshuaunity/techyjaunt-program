@@ -1,4 +1,4 @@
-import Transaction from "./transaction";
+import Transaction from "./transaction.js";
 
 class BankAccount{
 
@@ -40,21 +40,21 @@ class BankAccount{
     get getBalance(){
             return this.balance
     }
-    set setTransactions(transactions){
-        if(!Array.isArray(transactions)){
-            throw new Error("transaction passed is not an array")
-        }
-        transactions.forEach(transaction => {
-            if(!transaction.hasPoperty("type") && !transaction.hasPoperty("amount") && !transaction.hasPoperty("timestamp")){
-                throw new Error("Array passed in not of transaction type")
-            }        
-        });
-        transactions.forEach(transaction => {
-            this.transactions.push(transaction);
-        });
+    // set setTransactions(transactions){
+    //     if(!Array.isArray(transactions)){
+    //         throw new Error("transaction passed is not an array")
+    //     }
+    //     transactions.forEach(transaction => {
+    //         if(transaction.hasPoperty !== "type" && transaction.hasPoperty !== "amount" && transaction.hasPoperty !== "timestamp"){
+    //             throw new Error("Array passed in not of transaction type")
+    //         }        
+    //     });
+    //     transactions.forEach(transaction => {
+    //         this.transactions.push(transaction);
+    //     });
         
-        console.log(`Added ${transactions.length()} transactions`);
-    }
+    //     console.log(`Added ${transactions.length} transactions`);
+    // }
 
     getTransactions () {
         return this.transactions;
@@ -64,17 +64,22 @@ class BankAccount{
     deposit(amount){
         if(typeof amount === "number" && amount > 0){
             this.balance += amount;
+            const transaction = new Transaction("Credit",amount);
+            this.transactions.push(transaction);  
             console.log(`Successfully deposited ${amount}...New account balance is ${this.balance}`)
-            const transaction = new Transaction("Savings",amount);
-            this.transactions.push(transaction);           
-
+        }else{
+            console.log("Deposit Failed...Please deposit an amount greater than zero");
         }
         
     }
     withdraw (amount){
         if(typeof amount === "number" && amount > 0 && this.balance > amount){
             this.balance -= amount;
+            const transaction = new Transaction("Debit",amount);
+            this.transactions.push(transaction);
             console.log(`Successfully withdrawn ${amount}...New account balance is ${this.balance}`)
+        }else{
+            console.log("Withdrawal Failed...Ensure you are entering a valid amount and your balance is greater than 0r equal to the withdrawal amount")
         }
     }
 }
@@ -82,13 +87,7 @@ const bankAccount = new BankAccount(1234567,"Ademiju Taiwo");
 console.log(bankAccount);
 bankAccount.setAccountNumber = 12322;
 bankAccount.setAcountHolder= "John Doe";
-bankAccount.deposit(20000);
-bankAccount.a
-console.log(bankAccount.getBalance)
+bankAccount.deposit(40000);
 console.log(bankAccount);
-console.log
-
-
-
-// const bankAccount2 = new BankAccount("1234567","John Doe");
-// console.log(bankAccount2);
+bankAccount.withdraw(4000);
+console.log(bankAccount);

@@ -1,11 +1,9 @@
 class Transaction{
 
     constructor(type,amount){
-        this.validateTransactionType;
+        this.validateTransactionType(type);
         this.type = type;
-        if(typeof amount === "number" && amount > 0){
-        this.amount = amount;
-        }
+        this.validateTransactionAmount(amount)
         this.amount = amount;
         this.timestamp = new Date;
     }
@@ -38,8 +36,8 @@ class Transaction{
     } 
 
     validateTransactionType(type) {
-        if (typeof type !== "string" && (type !== "Credit" || type != "Debit")) {
-            throw new Error("Invalid transaction type..Transaction type should br 'Credit' or 'Debit'");
+        if ((typeof type !== "string" ) && (type !== "Credit" || type !=="Debit")) {
+            throw new Error("Invalid transaction type..Transaction type should be 'Credit' or 'Debit'");
         }
     }
     validateTransactionAmount(amount) {
