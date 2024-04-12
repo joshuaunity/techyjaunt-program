@@ -21,14 +21,6 @@
 // const person2 = new BankAccount(7041300445, "Idighekere Udo", `$20000`)
 // console.log(person1.accountDetails())
 // console.log(person2.accountDetails())
-
-class Transaction {
-    constructor(type, amount) {
-        this._type = type
-        this._amount = amount
-        this._timestamp = new Date()
-    }
-}
 class BankAccount {
     constructor(accountNumber, accountHolder, balance) {
         this._accountNumber = accountNumber
@@ -88,6 +80,14 @@ class BankAccount {
         return this._transactions
     }
 }
+
+class Transaction {
+    constructor(type, amount) {
+        this._type = type
+        this._amount = amount
+        this._timestamp = new Date()
+    }
+}
 const acc = new BankAccount(1234567890, "Idighekere Udo", 50000)
 // const acc1 = new BankAccount(1234567890, "Idighekere Udo", 2000)
 console.log(`Initial Balance: NGN${acc.balance}`)
@@ -96,4 +96,9 @@ acc.deposit(12500)
 console.log(`Balance after Deposit: NGN${acc.balance}`)
 acc.withdraw(7000)
 console.log(`Balance after Withdraw: NGN${acc.balance}`)
+acc.withdraw(100000)
+console.log(`Balance after Withdraw: NGN${acc.balance}`)
+acc.deposit(100000)
+console.log(`Balance after Deposit: NGN${acc.balance}`)
+
 console.log(acc.getTransactions())
