@@ -12,7 +12,7 @@ const basicSalary = (employee) => {
 console.log(basicSalary(Johnson));
 
 const salaryUpdate = (employee) => {
-  employee.salary = employee.salary + 3000;
+  employee.salary = 8000;
   employee.role = 'full-stack developer'
   return `The updated salary of ${employee.name} for the role of ${employee.role} is ${employee.salary} per month`;
 }
