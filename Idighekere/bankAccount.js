@@ -88,7 +88,6 @@ class BankAccount {
         return this._transactions
     }
 }
-
 const acc = new BankAccount(1234567890, "Idighekere Udo", 50000)
 // const acc1 = new BankAccount(1234567890, "Idighekere Udo", 2000)
 console.log(`Initial Balance: NGN${acc.balance}`)
