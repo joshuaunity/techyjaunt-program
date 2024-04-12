@@ -22,10 +22,10 @@
 // console.log(person1.accountDetails())
 // console.log(person2.accountDetails())
 class BankAccount {
-    constructor(accountNumber, accountHolder, balance) {
+    constructor(accountNumber, accountHolder) {
         this._accountNumber = accountNumber
         this._accountHolder = accountHolder
-        this._balance = balance
+        this._balance = 0
         this._transactions = []
     }
 
@@ -88,7 +88,7 @@ class Transaction {
         this._timestamp = new Date()
     }
 }
-const acc = new BankAccount(1234567890, "Idighekere Udo", 50000)
+const acc = new BankAccount(1234567890, "Idighekere Udo")
 // const acc1 = new BankAccount(1234567890, "Idighekere Udo", 2000)
 console.log(`Initial Balance: NGN${acc.balance}`)
 // console.log(`Initial Balance: NGN${acc1.balance}`)
