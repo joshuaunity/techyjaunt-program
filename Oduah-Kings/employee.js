@@ -16,6 +16,6 @@ const updateSalary = (employee, newSalary) => {
     console.log(`${employee.name}'s salary has been updated to $${newSalary}`);
 };
 
-updateSalary(oduah, 80000); // Update Oduah's salary to $3500
+updateSalary(oduah, 80000); // Update Oduah's salary to $80000
 
 console.log(getSalary(oduah)); 
